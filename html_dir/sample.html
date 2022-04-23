@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+      <script>
+      </script>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>sample HTML</title>
+  </head>
+  <body>
+      <h1>Hello World</h1>
+      <script>
+        var Person = function(living, age, gender) {
+          this.living = living;
+          this.age = age;
+          this.gender = gender;
+          this.getGender = function() {return this.gender}
+        }
+        var cody = new Person(true, 10, 'Male');
+        console.log(cody);
+        /* JavaScript 言語であらかじめ定義されている String() コンストラクタ関数も上記と同様のオ
+ブジェクトの生成パターンを持っています。String() の場合コンストラクタ関数は JavaScript
+にビルトインされているため、インスタンス化を行うだけで文字列インスタンスを得ることがで
+きます。しかし組み込みのコンストラクタ関数を使おうが、Person() のようなカスタムコンス
+トラクタ関数を使おうが、オブジェクトの生成パターンは同じです。 */
+      </script>
+  </body>
+</html>
