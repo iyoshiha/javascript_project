@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<div class="container">
+	<p><input type="checkbox" id="check80" name="fruits" value="apple">
+	<label for="checkbox1">over80</label></p>
+	<p><input type="checkbox" id="checkbox2" name="fruits" value="banana">
+	<label for="checkbox2">Banana</label></p>
+	<p><input type="checkbox" id="checkbox3" name="fruits" value="pine">
+	<label for="checkbox3">Pine</label></p>
+    <input id="namebox" type="text" value="nice">
+</div>
+
+<p id="output"></p>
+<p id="output2"></p>
+    
+</body>
+
+<script>
+    let targets = document.querySelectorAll(`input[type="checkbox"][id="check80"]`);
+    // let targets = document.querySelectorAll(`input[type="text"]`);
+
+    for (let target of targets) {
+        // 80歳のチェックボックスだけ抽出
+        // if (target.value == "80歳"){
+            let target_value = target.value;
+
+            target.addEventListener('change', function(e) {
+                let customer_tag = document.getElementById('namebox');
+                let customer_name = customer_tag.value;
+                let status_check = target.checked;
+            if (status_check == true){
+                customer_name = '0ver80:' + customer_name;
+                customer_tag.value = customer_name;
+
+                
+            }else if (status_check == false){
+                console.log(false);
+                customer_tag.innerHTML = customer_name.replace("Over80:", "");
+
+            }
+            
+
+        })
+
+            // document.querySelector('#output').innerHTML = `${target.value} : ${target.checked}`;
+        }
+    
+</script>
+</html>
